@@ -3,10 +3,9 @@
 #include <stdlib.h>
 #include "calculator.h"
 
-/**
- * Displays the menu and handles user interaction.
- * Includes basic error handling for input and calculation.
- */
+ // Displays the menu and handles user interaction.
+  //Includes basic error handling for input and calculation.
+ //james //yvtte
 int main() {
     int choice;
     float num1, num2, result;
@@ -15,7 +14,7 @@ int main() {
     printf("==== Simple Calculator ====\n");
     printf("1. Add\n2. Subtract\n3. Multiply\n4. Divide\n");
     printf("Enter your choice (1-4): ");
-
+//Yvette
     if (scanf("%d", &choice) != 1 || choice < 1 || choice > 4) {
         printf("Invalid input! Please enter a number between 1 and 4.\n");
         return 1;
@@ -26,7 +25,7 @@ int main() {
         printf("Invalid input! Please enter valid numbers.\n");
         return 1;
     }
-
+// Wendy
     switch (choice) {
         case 1:
             result = add(num1, num2);
