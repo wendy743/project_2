@@ -1,19 +1,29 @@
-# Makefile for the simple calculator
+# Makefile for the simple calculator project
 
+# Compiler and flags
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c11## wendy/james
-TARGET = calculator
+CFLAGS = -Wall -g
 
-all: $(TARGET)
+# Files
+SRC = main.c calculator.c
+OBJ = $(SRC:.c=.o)
+EXEC = calculator
 
-$(TARGET): main.o calculator.o
-	$(CC) $(CFLAGS) -o $(TARGET) main.o calculator.o
-##//mich //yvtte
-main.o: main.c calculator.h
-	$(CC) $(CFLAGS) -c main.c
+# Default rule
+all: $(EXEC)
 
-calculator.o: calculator.c calculator.h
-	$(CC) $(CFLAGS) -c calculator.c
+# Links object files to create the executable-main purpose of a makefile
+$(EXEC): $(OBJ)
+	$(CC) $(CFLAGS) -o $(EXEC) $(OBJ)
 
+# Compile each .c file to .o just like running gcc file.c -o file in a terminal
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# wipes every the executables to be specific
 clean:
-	rm -f *.o $(TARGET)
+	rm -f *.o $(EXEC)
+
+# rebuilds everything from scratch
+rebuild: clean all
