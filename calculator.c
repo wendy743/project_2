@@ -1,6 +1,6 @@
 // calculator.c
 #include <stdio.h>
-#include "calculator.h"
+#include "calculator.h"// wendy//yvette
 
 // Addition of  two numbers and return the result
 float add(float a, float b) {
@@ -22,7 +22,7 @@ float divide(float a, float b, int* error_flag) {
     if (b == 0) {
         *error_flag = 1;  // marks an error that has happened either due to
 
-        return 0.0;       // safe fallback value
+        return 0.0;       // safe fallback value//mich// wendy
     }
     *error_flag = 0;      //  shows is everything okay
     return a / b;

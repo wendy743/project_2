@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "calculator.h"
+#include "calculator.h"//wendy
 
 //will display a user interaction prompts to choose from
 //error handling for calculations and to handle user input
-
+//wendy //yvtte
 int main() {
     int choice;
     float num1, num2, result;
@@ -29,7 +29,7 @@ int main() {
         printf("Invalid choice! Pick a number from 1 to 4.\n");
         return 1;
     }
-
+//mich
     // Get numbers from the user
     printf("Enter the first number: ");
     if (scanf("%f", &num1) != 1) {
@@ -42,7 +42,8 @@ int main() {
         printf("Invalid input for second number.\n");
         return 1;
     }
-
+//wendy ///james
+    // Check for division by zero
     // Perform the selected operation
     switch (choice) {
         case 1:
