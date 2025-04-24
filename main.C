@@ -23,9 +23,7 @@ float add(float a, float b) {
 }
 
 float subtract(float a, float b) {
-    //James 's code here
-    return 0; 
-}
+    return 0; // james
 
 float multiply(float a, float b) {
     // Yvette's code here
