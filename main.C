@@ -19,14 +19,11 @@ int main() {
 
 
 float add(float a, float b) {
-    // James's code here
-    return 0;
+    return a + b;
 }
 
 float subtract(float a, float b) {
-    //James 's code here
-    return 0; 
-}
+    return  a-b; // james
 
 float multiply(float a, float b) {
     // Yvette's code here
