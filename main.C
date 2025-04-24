@@ -1,31 +1,49 @@
-// main.c
 #include <stdio.h>
 #include <stdlib.h>
 #include "calculator.h"
 
- // Displays the menu and handles user interaction.
-  //Includes basic error handling for input and calculation.
- //james //yvtte
+//will display a user interaction prompts to choose from
+//error handling for calculations and to handle user input
+
 int main() {
     int choice;
     float num1, num2, result;
     int error_flag = 0;
 
-    printf("==== Simple Calculator ====\n");
-    printf("1. Add\n2. Subtract\n3. Multiply\n4. Divide\n");
-    printf("Enter your choice (1-4): ");
-//Yvette
-    if (scanf("%d", &choice) != 1 || choice < 1 || choice > 4) {
-        printf("Invalid input! Please enter a number between 1 and 4.\n");
+    // Show options to the user
+    printf("==Simple Calculator ==\n");
+    printf("Choose an operation:\n");
+    printf("1. Add\n");
+    printf("2. Subtract\n");
+    printf("3. Multiply\n");
+    printf("4. Divide\n");
+    printf("Enter your choice: ");
+
+    // Check if user input is valid
+    if (scanf("%d", &choice) != 1) {
+        printf("Oops! Invalid input. Please enter a number.\n");
         return 1;
     }
 
-    printf("Enter two numbers: ");
-    if (scanf("%f %f", &num1, &num2) != 2) {
-        printf("Invalid input! Please enter valid numbers.\n");
+    if (choice < 1 || choice > 4) {
+        printf("Invalid choice! Pick a number from 1 to 4.\n");
         return 1;
     }
-// Wendy
+
+    // Get numbers from the user
+    printf("Enter the first number: ");
+    if (scanf("%f", &num1) != 1) {
+        printf("Invalid input for first number.\n");
+        return 1;
+    }
+
+    printf("Enter the second number: ");
+    if (scanf("%f", &num2) != 1) {
+        printf("Invalid input for second number.\n");
+        return 1;
+    }
+
+    // Perform the selected operation
     switch (choice) {
         case 1:
             result = add(num1, num2);
@@ -39,12 +57,18 @@ int main() {
         case 4:
             result = divide(num1, num2, &error_flag);
             if (error_flag) {
-                printf("Error: Division by zero is not allowed.\n");
+                printf("You can't divide by zero!\n");
                 return 1;
             }
             break;
+        default:
+            // Should never happen because of earlier checks
+            printf("Something went wrong.\n");
+            return 1;
     }
 
+    // Show the result
     printf("Result: %.2f\n", result);
+
     return 0;
 }
