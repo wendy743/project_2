@@ -2,28 +2,36 @@
 #include <stdio.h>
 #include "calculator.h"
 
-// Addition of  two numbers and return the result
+/**
+ * Adds two numbers.
+ */
 float add(float a, float b) {
     return a + b;
 }
 
-// Subtraction
+/**
+ * Subtracts the second number from the first.
+ */
 float subtract(float a, float b) {
     return a - b;
 }
 
-// Multiplication of two values
+/**
+ * Multiplies two numbers.
+ */
 float multiply(float a, float b) {
     return a * b;
 }
 
-// Division of a by b, but checks for zero to avoid crash
+/**
+ * Divides the first number by the second.
+ * Sets error_flag if division by zero is attempted.
+ */
 float divide(float a, float b, int* error_flag) {
     if (b == 0) {
-        *error_flag = 1;  // marks an error that has happened either due to
-
-        return 0.0;       // safe fallback value
+        *error_flag = 1;
+        return 0.0;
     }
-    *error_flag = 0;      //  shows is everything okay
+    *error_flag = 0;
     return a / b;
 }
