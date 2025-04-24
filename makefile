@@ -17,10 +17,15 @@ $(EXEC): $(OBJ)
 	$(CC) $(CFLAGS) -o $(EXEC) $(OBJ)
 
 # Compile each .c file to .o just like running gcc file.c -o file in a terminal
-
+## wendy///james //mich
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-
+#// mich
+#// wendy
+#// james
+# Clean up the build
+# removes all the object files and the executable
+#// wendy
 # wipes every the executables to be specific
 clean:
 	rm -f *.o $(EXEC)
